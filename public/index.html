@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#1e415e">
+    <link rel="manifest" href="manifest.json">
+    <title>Kocie PWA</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <form id="loginForm">
+            <h2>Zaloguj się</h2>
+            <input type="text" id="username" placeholder="Nazwa użytkownika">
+            <input type="text" id="email" placeholder="Adres e-mail">
+            <input type="password" id="password" placeholder="Hasło">
+            <input type="password" id="confirmPassword" placeholder="Powtórz hasło">
+            <p id="errorMsg"></p>
+            <button type="submit">Zaloguj</button>
+        </form>
+
+        <div id="appData">
+            <h2>Ciekawostka o kocie</h2>
+            <p id="catFact">Ładowanie...</p>
+            <button id="getFact">Pobierz inną</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('sw.js');
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,10 @@
+{
+  "name": "Kamil Ugniewski zadanie",
+  "short_name": "zad",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#1e415e",
+  "icons": [
+  ]
+}
