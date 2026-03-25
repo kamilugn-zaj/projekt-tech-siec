@@ -51,7 +51,12 @@ async function fetchCatData() {
     try {
         let response = await fetch('/api/cats');
         let data = await response.json();
-        catFact.innerHTML = data.fact;
+        
+        if (response.status === 429) {
+            catFact.innerHTML = data.error;
+        } else {
+            catFact.innerHTML = data.fact;
+        }
     } catch (err) {
         catFact.innerHTML = 'Błąd pobierania danych';
     }
